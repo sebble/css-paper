@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flexipage</title>
+        <style>
+            body * {
+                box-sizing: border-box;
+                border: solid 1px #000;
+                background-color: #ddd;
+                opacity: 0.7;
+            }
+            .page {
+                width: 300px;
+                height: 500px;
+            }
+            
+            
+            /* table layout */
+            .page,
+            .column {
+                display: table;
+                height: 100%;
+                width: 100%;
+            }
+            .page > *,
+            .column > * {
+                display: table-row;
+                height: 1px;
+            }
+            .page > div,
+            .column > div {
+                height: auto;
+            }
+            /* page layout */
+            .page {
+                width: 300px;
+                height: 500px;
+            }
+            .column {
+                float: left;
+                width: 33.333%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <header>The page header</header>
+            <div class="columns">
+                <div class="column">
+                    <header>The column header</header>
+                    <div class="column-content">The column content</div>
+                    <footer>The column footer</footer>
+                </div>
+                <div class="column">
+                    <header>The column header</header>
+                    <div class="column-content">The column content</div>
+                    <footer>The column footer</footer>
+                </div>
+                <div class="column">
+                    <header>The column header</header>
+                    <div class="column-content">The column content</div>
+                    <footer>The column footer</footer>
+                </div>
+            </div>
+            <footer>The page footer</footer>
+        </div>
+    </body>
+</html>
