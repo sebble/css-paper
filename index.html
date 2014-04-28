@@ -54,9 +54,13 @@
         /* content flow */
         #content {
             -webkit-flow-into: all-content;
+            -ms-flow-into: all-content;
+            flow-into: all-content;
         }
         .column-content > div > div {
             -webkit-flow-from: all-content;
+            -ms-flow-from: all-content;
+            flow-from: all-content;
             /* note: cannot flow into table-row */
         }
         .column-content > div {
@@ -72,30 +76,46 @@
         /* figure flow */
         figure.top {
             -webkit-flow-into: page-top;
+            -ms-flow-into: page-top;
+            flow-into: page-top;
         }
         .column > header > div {
             -webkit-flow-from: page-top;
+            -ms-flow-from: page-top;
+            flow-from: page-top;
         }
         
         figure.top.full {
             -webkit-flow-into: page-top-full;
+            -ms-flow-into: page-top-full;
+            flow-into: page-top-full;
         }
         .page > header > div {
             -webkit-flow-from: page-top-full;
+            -ms-flow-from: page-top-full;
+            flow-from: page-top-full;
         }
         
         figure.bottom {
             -webkit-flow-into: page-bottom;
+            -ms-flow-into: page-bottom;
+            flow-into: page-bottom;
         }
         .column > footer > div {
             -webkit-flow-from: page-bottom;
+            -ms-flow-from: page-bottom;
+            flow-from: page-bottom;
         }
         
         figure.bottom.full {
             -webkit-flow-into: page-bottom-full;
+            -ms-flow-into: page-bottom-full;
+            flow-into: page-bottom-full;
         }
         .page > footer > div {
             -webkit-flow-from: page-bottom-full;
+            -ms-flow-from: page-bottom-full;
+            flow-from: page-bottom-full;
         }
         
         
@@ -105,18 +125,23 @@
         #content > h3:nth-of-type(1),
         #content > p:nth-of-type(1) {
             -webkit-flow-into: title-page;
+            -ms-flow-into: title-page;
         }
         .page:first-child > div > div {
             -webkit-flow-from: title-page;
+            -ms-flow-from: title-page;
         }
         .page:first-child > footer > div {
             -webkit-flow-from: none;
+            -ms-flow-from: none;
         }*/
         
         
         /* only one pull */
         .bottom {
             -webkit-region-break-after: always;
+            -ms-region-break-after: always;
+            region-break-after: always;
         }
         
         
@@ -164,18 +189,26 @@
         }
         #content {
             -webkit-flow-into: the-void;
+            -ms-flow-into: the-void;
+            flow-into: the-void;
             display: none;
         }
         #sigchi-source {
             -webkit-flow-into: all-content;
+            -ms-flow-into: all-content;
+            flow-into: all-content;
         }
         
         h1:first-of-type {
             -webkit-flow-into: the-authors;
+            -ms-flow-into: the-authors;
+            flow-into: the-authors;
             text-align: center;
         }
         .author {
             -webkit-flow-into: the-authors;
+            -ms-flow-into: the-authors;
+            flow-into: the-authors;
             float: left;
             width: 33%;
             text-align: center;
@@ -185,6 +218,8 @@
         }
         .page:first-child  > header > div {
             -webkit-flow-from: the-authors;
+            -ms-flow-from: the-authors;
+            flow-from: the-authors;
         }
         
         h1, h2, h3 {
@@ -232,10 +267,14 @@
         /* temp */
         #foot1 {
             -webkit-flow-into: the-foot1;
+            -ms-flow-into: the-foot1;
+            flow-into: the-foot1;
             font-size: 80%;
         }
         .page:first-child .column:first-child > footer > div {
             -webkit-flow-from: the-foot1;
+            -ms-flow-from: the-foot1;
+            flow-from: the-foot1;
         }
         .column {
             background-color: transparent;
@@ -249,6 +288,13 @@
         
         /* add padding if used */
         @-webkit-region footer > div {
+            *:first-of-type {
+                /* cannot modify margins */
+                margin-left: 99pt;
+                color: #090;
+            }
+        }
+        @region footer > div {
             *:first-of-type {
                 /* cannot modify margins */
                 margin-left: 99pt;
@@ -422,9 +468,13 @@
         /* flow style */
         #content {
             -webkit-flow-into: the-content;
+            -webkit-flow-into: the-content;
+            flow-into: the-content;
         }
         .column-content {
             -webkit-flow-from: the-content;
+            -webkit-flow-from: the-content;
+            flow-from: the-content;
         }
         
         #content p {
@@ -432,6 +482,8 @@
         }
         #content section {
             -webkit-region-break-before: always;
+            -webkit-region-break-before: always;
+            region-break-before: always;
         }
         .column p:nth-of-type(2) {
             padding: 20px;
@@ -443,6 +495,8 @@
         #content p:first-line {
             color: red;
             -webkit-region-break-after: avoid;
+            -webkit-region-break-after: avoid;
+            region-break-after: avoid;
         }
         
         /* floating figures */
@@ -472,6 +526,8 @@
         }
         h2 {
             -webkit-region-break-before: always;
+            -webkit-region-break-before: always;
+            region-break-before: always;
         }
         
         
@@ -489,6 +545,8 @@
         figure.full {
             width: 200%;
             -webkit-region-break-before: right;
+            -webkit-region-break-before: right;
+            region-break-before: right;
         }
         
         /*
@@ -515,21 +573,29 @@
         
         #content > figure.bottom {
             -webkit-flow-into: foot-column;
+            -webkit-flow-into: foot-column;
+            flow-into: foot-column;
             height: 40px;
             opacity: 0.8;
             background-color: #c90;
         }
         #content > figure.bottom.full {
             -webkit-flow-into: foot-contents;
+            -webkit-flow-into: foot-contents;
+            flow-into: foot-contents;
             height: 40px;
             opacity: 0.8;
             background-color: #c90;
         }
         .column footer {
             -webkit-flow-from: foot-column;
+            -webkit-flow-from: foot-column;
+            flow-from: foot-column;
         }
         .column footer {
             -webkit-flow-from: foot-contents;
+            -webkit-flow-from: foot-contents;
+            flow-from: foot-contents;
         }
         
         /* test */
@@ -550,6 +616,8 @@
         /* enforce only one figure per column-footer */
         .bottom {
             -webkit-region-break-after: always;
+            -webkit-region-break-after: always;
+            region-break-after: always;
         }
         
         
@@ -739,7 +807,7 @@ Optional section to be included in your final version.}
 <section>
 <h2>Introduction</h2>
 
-This format is to be used for submissions that are
+<p>This format is to be used for submissions that are
 published in the conference proceedings.  We wish to give
 this volume a consistent, high-quality appearance. We
 therefore ask that authors follow some simple
